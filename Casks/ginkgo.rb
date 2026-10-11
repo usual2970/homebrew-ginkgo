@@ -7,9 +7,15 @@ cask "ginkgo" do
   desc "Menu bar clipboard companion with on-device insights"
   homepage "https://ginkgo.ikit.fun"
 
-  depends_on macos: ">= :sonoma"
+  depends_on macos: :sonoma
 
   app "Ginkgo.app"
+
+  # Ad-hoc signed, not notarized: Gatekeeper rejects it while quarantined.
+  postflight do
+    system_command "/usr/bin/xattr",
+                   args: ["-dr", "com.apple.quarantine", "#{appdir}/Ginkgo.app"]
+  end
 
   zap trash: [
     "~/Library/Application Support/Ginkgo",
