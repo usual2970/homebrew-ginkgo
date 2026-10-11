@@ -7,7 +7,7 @@ cask "ginkgo" do
   desc "Menu bar clipboard companion with on-device insights"
   homepage "https://ginkgo.ikit.fun"
 
-  depends_on macos: ">= :sonoma"
+  depends_on macos: :sonoma
 
   app "Ginkgo.app"
 
