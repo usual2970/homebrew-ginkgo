@@ -1,8 +1,8 @@
 cask "ginkgo" do
-  version "0.1.26"
-  sha256 "28770804f57ac523166a1a181c4909ca1ced5ea57a84d8dd508234dd5dacbd61"
+  version "0.1.27"
+  sha256 "ab35caa79c2d0a6bed1b334f6ed5b33039e6ad534411099849735996f6a287b7"
 
-  url "https://ginkgo-downloads.certimate.me/releases/0.1.26/Ginkgo-0.1.26.zip"
+  url "https://ginkgo-downloads.certimate.me/releases/0.1.27/Ginkgo-0.1.27.zip"
   name "Ginkgo"
   desc "Menu bar clipboard companion with on-device insights"
   homepage "https://ginkgo.ikit.fun"
