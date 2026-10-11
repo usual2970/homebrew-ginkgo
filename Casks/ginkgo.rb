@@ -12,9 +12,8 @@ cask "ginkgo" do
   app "Ginkgo.app"
 
   # Ad-hoc signed, not notarized: Gatekeeper rejects it while quarantined.
-  postflight do
-    system_command "/usr/bin/xattr",
-                   args: ["-dr", "com.apple.quarantine", "#{appdir}/Ginkgo.app"]
+  postflight_steps do
+    run "/usr/bin/xattr", args: ["-dr", "com.apple.quarantine", "{{appdir}}/Ginkgo.app"]
   end
 
   zap trash: [
