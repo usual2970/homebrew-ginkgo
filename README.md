@@ -1,13 +1,14 @@
 # homebrew-ginkgo
 
-Formula-only Homebrew tap for [Ginkgo](https://github.com/usual2970/ginkgo).
-Binaries are **not** stored here — the cask downloads from the public
-Cloudflare R2 origin configured in the release pipeline.
+Homebrew tap for [Ginkgo](https://github.com/usual2970/ginkgo). The cask
+downloads its zip from Cloudflare R2.
 
-```sh
-brew tap usual2970/ginkgo
-brew install --cask ginkgo
+The tap is frozen. A Ginkgo release tag does not update `Casks/ginkgo.rb`.
+
+The only writer is `script/update-homebrew-tap.sh` in the Ginkgo repo.
+Run it from a ginkgo checkout after that version is already on R2, and
+only when you must move the cask. Do not edit `Casks/ginkgo.rb` by hand.
+
+```bash
+HOMEBREW_TAP_TOKEN=<github-token> ./script/update-homebrew-tap.sh 0.1.3
 ```
-
-`Casks/ginkgo.rb` is regenerated on each `v*` tag by
-`ginkgo/script/update-homebrew-tap.sh` in CI.
